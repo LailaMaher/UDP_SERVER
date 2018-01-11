@@ -65,7 +65,7 @@ void Server::acceptUser(){
 	cout << "Client information: \n";
 	string IP(inet_ntoa(client.sin_addr));
 
-	cout << "IP = " << IP << " PORT = " << client.sin_port << endl;
+	cout << "IP = " << IP << " PORT = " << ntohs(client.sin_port) << endl;
 	
 	SendStream("Hello this is the server\n");
 }

@@ -71,13 +71,13 @@ void Server::acceptUser(){
 
 	//string data = ReadStream();
 
-	//cout << "Client send :: " << data << endl;
-	//cout << "Client information: \n";
-	//string IP(inet_ntoa(client.sin_addr));
-
-	//cout << "IP = " << IP << " PORT = " << client.sin_port << endl;
-	
 	SendStream("Hello this is the client\n");
 
-	cout << ReadStream() << endl;
+	cout << "Server Send :: " << ReadStream() << endl;
+
+	cout << "Server information: \n";
+	string IP(inet_ntoa(server_address.sin_addr));
+
+	cout << "IP = " << IP << " PORT = " << ntohs(server_address.sin_port) << endl;
+	
 }
